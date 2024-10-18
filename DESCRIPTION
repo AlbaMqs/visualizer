@@ -1,0 +1,23 @@
+Package: visualizer
+Title: Visual Add-on Facilitating the Creation of Charts with ggplot2
+Version: 0.0.1
+Authors@R: 
+    person("Alba", "Maiques", , "maiques@hotmail.fr", role = c("aut", "cre"))
+Description: VisualizeR is an R package offering an intuitive graphical interface 
+    that makes it simple and efficient to create and customize plots using ggplot2. 
+    Through a layer-based system, it allows users to visually configure each element 
+    of a ggplot2 plot, reducing the complexity of the syntax while retaining the 
+    full flexibility of the ggplot2 graphics engine. This package is designed for 
+    users of all levels, from beginners looking to explore plot creation to advanced 
+    users aiming to streamline their visualization process.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+URL: https://github.com/AlbaMqs/visualizer
+BugReports: https://github.com/AlbaMqs/visualizer/issues
+Keywords: ggplot2, visualization, graphics, data visualization
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
