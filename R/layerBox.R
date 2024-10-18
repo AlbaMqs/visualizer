@@ -1,14 +1,17 @@
 #' Layer Button
 #'
 #' @param type Type of the layer
+#' @param drag Dragable box
 #'
 #' @return UI button
 #' @import shiny
 #' @importFrom dplyr case_when
 #' @keywords internal
 
-layerBox <- function(type){
+layerBox <- function(type, drag = T){
   title <- case_when(type == "theme" ~ "Global Theme Options",
+                     type == "vline" ~ "Vertical Line",
+                     type == "hline" ~ "Horizontal Line",
                      type == "text_global" ~ "Global Texte Options",
                      type == "point" ~ "Scatter Plot")
 
@@ -17,7 +20,11 @@ layerBox <- function(type){
     image <- paste0("inst/www/", image)
   }
 
-  div <- div(class = "layer-item",
+  class <- ifelse(drag,
+                  "layer-item",
+                  "layer-item non-drag")
+
+  div <- div(class = class,
              id = type,
              img(src = image),
              span(title))

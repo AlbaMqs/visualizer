@@ -1,31 +1,74 @@
 #layers_bar {
-  left: 0;
+  padding: 0 0 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   width: 256px;
-  padding: 0;
+  height: 100vh; /* Pour que la barre prenne la hauteur de l'écran */
 }
 
-#layers_bar .rank-list-item{
+#layers_bar .rank-list-container {
+  flex-grow: 1; /* Remplit l'espace disponible mais ne force pas l'extension des éléments */
+  border: 0;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
+  width: 100%; /* S'assure que le conteneur prend toute la largeur */
+}
+
+#layers_bar .rank-list {
+  margin: 0;
+}
+
+#layers_bar .rank-list-item {
   padding: 0;
   border-radius: 0;
   height: 64px;
   border: 0;
+  width: 100%; /* Assure que chaque item prend toute la largeur */
 }
 
-#layers_bar .rank-list{
-  margin: 0;
-  background: 0;
-  border: 0;
+.layer-item {
+  display: flex;
+  align-items: center; /* Aligne verticalement le contenu */
+  justify-content: flex-start; /* Aligne le contenu à gauche */
+  background-color: #F3F5F7; /* Couleur de fond originale */
+  border-bottom: solid 1px #DAE0E7; /* Bordure inférieure */
+  height: 64px; /* Hauteur fixe */
+  padding: 0 8px; /* Un peu de padding pour l'espacement horizontal */
+  margin: 0; /* Neutralisation des marges */
+  background: none; /* Neutralise tout background par défaut */
+  border: 0; /* Neutralise toute bordure par défaut */
+  width: 100%; /* Assure que l'élément prend toute la largeur */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour l'effet hover */
 }
 
-#layers_bar .rank-list-container{
-  flex: inherit;
-  border: 0;
-  padding: 0;
-  margin: 0;
+.layer-item:not(.non-drag):hover {
+  background-color: #E2E6EA; /* Légèrement plus sombre au survol */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre vers l'extérieur au survol */
 }
 
-.layer-item{
-  background-color: #F3F5F7;
-  border-bottom: solid 1px #DAE0E7;
-  height: 100%;
+.layer-item img {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px; /* Espace entre l'image et le texte */
 }
+
+.layer-item span {
+  display: flex;
+  align-items: center; /* Centre le texte verticalement */
+  font-weight: bold; /* Texte en gras */
+}
+
+#add-layer {
+  background-color: #5A9FD6; /* Bleu plus doux */
+  color: white; /* Texte en blanc pour contraster */
+  border-top: solid 1px #DAE0E7; /* Séparation visuelle avec une bordure en haut */
+  transition: background-color 0.3s ease; /* Transition douce pour les changements de couleur */
+}
+
+#add-layer:hover {
+  background-color: #4A8CC0; /* Bleu légèrement plus foncé au survol */
+}
+
+

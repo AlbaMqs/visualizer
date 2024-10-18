@@ -50,5 +50,6 @@ po/*~
 rsconnect/
 =======
 .Rproj.user
+tester.R
 inst/doc
 >>>>>>> 6096fe5 (first commit)

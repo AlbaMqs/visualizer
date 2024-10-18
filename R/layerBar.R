@@ -12,12 +12,20 @@ layerBar <- function() {
 
       rank_list(
         labels = list(
-          layerBox("theme"),
-          layerBox("text_global"),
+          layerBox("vline"),
+          layerBox("hline"),
           layerBox("point")
         ),
         input_id = "sortable_layer",
         options = sortable_options() # Permettre la sélection multiple si nécessaire
-      )
+      ),
+
+      layerBox("theme", drag = F),
+      layerBox("text_global", drag = F),
+
+      div(class = "layer-item non-drag",
+          id = "add-layer",
+          img(src = "add.png"),
+          span("Add layer"))
   )
 }
