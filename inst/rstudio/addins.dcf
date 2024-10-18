@@ -1,0 +1,4 @@
+Name: VizualizeR
+Description: Create a chart using a graphical user interface.
+Binding: LaunchApp
+Interactive: true

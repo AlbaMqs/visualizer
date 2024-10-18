@@ -1,0 +1,41 @@
+/* General body styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for both sidebars */
+.sidebar {
+  background-color: #f8f9fa;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+/* Specific positioning for right sidebar */
+#param-sidebar {
+  right: 0;
+  width: 300px;
+}
+
+/* Style for the central content */
+#main {
+  margin-left: 276px; /* Offset to account for the left sidebar */
+  margin-right: 320px; /* Offset to account for the right sidebar */
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* Tabset panel styling */
+.tab-content {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+

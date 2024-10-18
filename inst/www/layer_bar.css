@@ -1,0 +1,31 @@
+#layers_bar {
+  left: 0;
+  width: 256px;
+  padding: 0;
+}
+
+#layers_bar .rank-list-item{
+  padding: 0;
+  border-radius: 0;
+  height: 64px;
+  border: 0;
+}
+
+#layers_bar .rank-list{
+  margin: 0;
+  background: 0;
+  border: 0;
+}
+
+#layers_bar .rank-list-container{
+  flex: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.layer-item{
+  background-color: #F3F5F7;
+  border-bottom: solid 1px #DAE0E7;
+  height: 100%;
+}
