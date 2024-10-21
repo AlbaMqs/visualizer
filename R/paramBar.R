@@ -7,13 +7,8 @@
 paramBar <- function() {
   div(id = "param-sidebar",
       class = "sidebar",
-      h3("Theme"),
 
-      selectInput(
-        "theme_name",
-        "Theme",
-        c("minimal", "classic", "dark", "light", "bw", "void"),
-        selected = "minimal"
-      )
+      theme_opt_panel(id = "pnl_theme_opt"),
+      line_panel(id = "pnl_line_0_geom")
   )
 }

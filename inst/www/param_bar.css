@@ -1,0 +1,22 @@
+/* Specific positioning for right sidebar */
+#param-sidebar {
+  right: 0;
+  width: 384px;
+  padding: 20px;
+}
+
+.panel {
+  display: none;
+  background: 0;
+  border: 0;
+  box-shadow : inherit;
+}
+
+.panel.visible {
+  display: block;
+}
+
+.panel h3{
+  margin-top: 0;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}

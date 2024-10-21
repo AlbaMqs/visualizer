@@ -24,6 +24,8 @@ VignetteBuilder: knitr
 Imports: 
     dplyr,
     ggplot2,
+    rlang,
     shiny,
     shinyjs,
-    sortable
+    sortable,
+    stringr

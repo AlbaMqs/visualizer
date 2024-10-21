@@ -4,10 +4,12 @@
 \alias{layerBox}
 \title{Layer Button}
 \usage{
-layerBox(type)
+layerBox(type, id = NULL, drag = T, session = getDefaultReactiveDomain())
 }
 \arguments{
 \item{type}{Type of the layer}
+
+\item{drag}{Dragable box}
 }
 \value{
 UI button

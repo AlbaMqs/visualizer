@@ -5,9 +5,20 @@
 #' @import shiny
 app_ui <- function() {
   fillPage(
+    tags$head(
+      tags$script(
+        HTML(
+          '$(document).on("shiny:connected", function() {
+          window.resizeTo(800, 600);
+        });'
+        )
+      )
+    ),
+
     useShinyjs(),
     useCSS("basic_interface.css"),
     useCSS("layer_bar.css"),
+    useCSS("param_bar.css"),
 
     fluidRow(
       layerBar(),
