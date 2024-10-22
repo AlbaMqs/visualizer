@@ -13,7 +13,8 @@ layerBox <- function(type, id = NULL, drag = T, session = getDefaultReactiveDoma
                      type == "line" ~ "Line",
                      type == "text_global" ~ "Global Texte Options",
                      type == "point" ~ "Scatter Plot",
-                     type == "bar" ~ "Bar plot")
+                     type == "bar" ~ "Bar plot",
+                     type == "text" ~ "Text")
 
   image <- paste0("layer_logo/", type, ".png")
   if (!file.exists(image)) { #DevMode
@@ -29,9 +30,6 @@ layerBox <- function(type, id = NULL, drag = T, session = getDefaultReactiveDoma
     id_layer <<- id_layer + 1
   }
 
-  if(type %in% geom_list){
-    id <- paste0(id, "_geom")
-  }
   id_layer_list <<- c(id_layer_list, id)
 
   div <- div(class = class,
