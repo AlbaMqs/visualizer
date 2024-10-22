@@ -14,6 +14,6 @@ A reactive value holding the name of the selected dataframe.
 }
 \description{
 This function handles the display of a modal dialog to select a dataframe
-from the Global Environment and returns the selected dataframe.
+from the Global Environment and returns the name of the selected dataframe.
 }
 \keyword{internal}
