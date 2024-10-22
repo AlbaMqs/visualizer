@@ -10,13 +10,14 @@ layerBar <- function() {
   div(id = "layers_bar",
       class = "sidebar",
 
+      h4(id = "info-box-layer",
+         class = "visible",
+         "Add a layer by clicking the button below"),
+
       rank_list(
-        labels = list(
-          layerBox("line"),
-          layerBox("point"),
-          layerBox("bar")
-        ),
+        labels = list(),
         input_id = "sortable_layer",
+        class = "invisible",
         options = sortable_options() # Permettre la sélection multiple si nécessaire
       ),
 

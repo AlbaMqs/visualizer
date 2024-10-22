@@ -71,4 +71,19 @@
   background-color: #4A8CC0; /* Bleu légèrement plus foncé au survol */
 }
 
+#info-box-layer.visible {
+  display: box;
+}
 
+#info-box-layer.invisible {
+  display: none;
+}
+
+
+#rank-list-sortable_layer.invisible {
+  visibility: hidden;
+}
+
+#rank-list-sortable_layer.visible {
+  visibility: visible;
+}

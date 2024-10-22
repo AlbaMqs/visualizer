@@ -27,7 +27,7 @@ app_server <- function(input, output, session) {
   })
 
   ## Layer Bar events
-  layerBarEvents(input, output, session, id_layer_list)
+  layerBarEvents(input, output, session)
 
   output$mainPlot <- renderPlot({
     print("Render plot triggered")
