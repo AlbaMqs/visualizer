@@ -7,12 +7,6 @@
 #' @import rlang
 
 plotDisplay <- function(input) {
-  print(work_df)
-  if(work_df == ""){
-    return(NULL)
-    print("a")
-  }
-  print("b")
   plot <- ggplot(get(work_df, envir = .GlobalEnv))
 
   plot <- plot +

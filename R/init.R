@@ -7,5 +7,4 @@
 #' @return None.
 #' @keywords internal
 init <- function(session){
-  cat("Init :", id_layer, fill = T)
 }

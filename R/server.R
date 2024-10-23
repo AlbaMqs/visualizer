@@ -22,7 +22,6 @@ app_server <- function(input, output, session) {
   observe({
     if (!is.null(selected_df())) {
       work_df <<- selected_df()  # Store the selected dataframe globally
-      print(work_df)
     }
   })
 
@@ -30,7 +29,6 @@ app_server <- function(input, output, session) {
   layerBarEvents(input, output, session)
 
   output$mainPlot <- renderPlot({
-    print("Render plot triggered")
     plotDisplay(input)})
 
   session$onSessionEnded(function() {
