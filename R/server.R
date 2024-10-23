@@ -11,12 +11,14 @@
 #'
 app_server <- function(input, output, session) {
 
-  init(session)
+  session$onFlushed(function() {
+    runjs("shinyjs.resizeWindow(1024, 768);") # Dimensions en pixels (ex. 1024x768)
+  })
 
   ## Selecting dataframe
 
   ## Encapsulated dataframe selection logic
-  selected_df <- dataframe_selection(input, output, session)
+  selected_df <- ui_df_selection(input, output, session)
 
   # Once the dataframe is selected, store it globally
   observe({
@@ -26,12 +28,8 @@ app_server <- function(input, output, session) {
   })
 
   ## Layer Bar events
-  layerBarEvents(input, output, session)
+  ui_layer_events(input, output, session)
 
   output$mainPlot <- renderPlot({
-    plotDisplay(input)})
-
-  session$onSessionEnded(function() {
-    out(session)
-  })
+    plot_display(input)})
 }

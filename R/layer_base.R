@@ -1,14 +1,18 @@
-#' Layer Button
+#' Layer base
 #'
-#' @param type Type of the layer
-#' @param drag Dragable box
+#' Constructor for the layers
+#'
+#' @param type String contain type of the layer
+#' @param drag Box is dragable ?
+#' @param id string ID of the layer
+#' @param session Standard Shiny parameters
 #'
 #' @return UI button
 #' @import shiny
 #' @importFrom dplyr case_when
 #' @keywords internal
 
-layerBox <- function(type, id = NULL, drag = T, session = getDefaultReactiveDomain()){
+layer_base <- function(type, id = NULL, drag = T, session = getDefaultReactiveDomain()){
   title <- case_when(type == "theme" ~ "Global Theme Options",
                      type == "line" ~ "Line",
                      type == "text_global" ~ "Global Texte Options",
@@ -24,11 +28,6 @@ layerBox <- function(type, id = NULL, drag = T, session = getDefaultReactiveDoma
   class <- ifelse(drag,
                   "layer-item",
                   "layer-item non-drag")
-
-  if(is.null(id)) {
-    id <- paste0("lb_", type, "_", id_layer)
-    id_layer <<- id_layer + 1
-  }
 
   id_layer_list <<- c(id_layer_list, id)
 

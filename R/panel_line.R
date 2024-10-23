@@ -1,4 +1,12 @@
-line_panel <- function(id) {
+#' panel_line
+#'
+#' Constructor of line panel
+#'
+#' @param id String of layer's ID
+#'
+#' @return Div of a line panel
+#'
+panel_line <- function(id) {
   div(class = "panel",
       id = id,
 

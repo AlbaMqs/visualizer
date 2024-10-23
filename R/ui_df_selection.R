@@ -1,15 +1,15 @@
-#' Dataframe Selection Module
+#' ui_df_selection
 #'
 #' This function handles the display of a modal dialog to select a dataframe
 #' from the Global Environment and returns the name of the selected dataframe.
 #'
 #' @param input, output, session Standard Shiny parameters.
 #'
-#' @return A reactive value holding the name of the selected dataframe.
+#' @return name of the selected dataframe.
 #' @keywords internal
 #' @importFrom shiny showModal modalDialog selectInput modalButton actionButton removeModal req
 
-dataframe_selection <- function(input, output, session) {
+ui_df_selection <- function(input, output, session) {
 
   # Reactive expression that lists dataframes in the Global Environment
   liste_objets <- reactive({

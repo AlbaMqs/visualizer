@@ -37,7 +37,7 @@ visualizer::launchApp()
 visualizer::launchApp(df)
 ```
 
-When you launch the tool, a pop-up window will appear (unless you've already provided your dataframe at the start). This first screen allows you to select the dataframe you want to work with. Simply choose one from the list and click "Validate."
+When you launch the tool, a pop-up window will appear (unless you've already provided your dataframe at the start). This first screen allows you to select the dataframe you want to work with. Simply choose one from the list and click **Validate**.
 
 Next, an empty plot will be displayed with a list of layers on the left side. Since no layers are added yet, the list will be empty. To create your first layer, click on **Add Layer** at the bottom left of the window. A new window will open, prompting you to choose the type of chart you'd like to add. Select the chart that best suits your needs to insert it into the plot.
 

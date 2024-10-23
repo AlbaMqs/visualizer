@@ -34,4 +34,17 @@ body {
   background-color: #f9f9f9;
 }
 
+#mainPlot {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66.66%; /* 2:3 aspect ratio (height/width = 3/2) */
+  height: 0; /* Height is controlled by padding-bottom */
+}
+#mainPlot > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 

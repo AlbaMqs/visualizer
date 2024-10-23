@@ -1,3 +1,5 @@
+#' ui_sidebar_layer
+#'
 #' UI for the left sidebar used to select layer
 #'
 #' @return Shiny UI Object
@@ -6,7 +8,7 @@
 #' @import sortable
 #' @import shinyjs
 
-layerBar <- function() {
+ui_sidebar_layer <- function() {
   div(id = "layers_bar",
       class = "sidebar",
 
@@ -21,8 +23,8 @@ layerBar <- function() {
         options = sortable_options() # Permettre la sélection multiple si nécessaire
       ),
 
-      layerBox("theme", id = "lb_theme_opt", drag = F),
-      layerBox("text_global", id = "lb_text_opt", drag = F),
+      layer_base("theme", id = "lb_theme_opt", drag = F),
+      layer_base("text_global", id = "lb_text_opt", drag = F),
 
       div(class = "layer-item non-drag",
           id = "add-layer",

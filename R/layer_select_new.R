@@ -1,12 +1,12 @@
-#' Generate Select Add Layer Modal
+#' layer_select_new
 #'
-#' Returns the UI for the "Select Add Layer" modal.
+#' Modal window UI where user can select the type of new layer
 #'
 #' @return A modalDialog object with custom content.
 #' @export
 #'
 #' @keywords internal
-selectAddLayer <- function() {
+layer_select_new <- function() {
   modalDialog(
     title = "Choose a Layer to Add",
 

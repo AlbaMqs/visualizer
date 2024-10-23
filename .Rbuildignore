@@ -3,3 +3,6 @@
 ^devtools_history\.R$
 ^LICENSE\.md$
 ^tester\.R$
+^docs/.quarto$
+^docs/_quarto_file/.quarto$
+^docs$

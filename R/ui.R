@@ -7,21 +7,19 @@ app_ui <- function() {
   fillPage(
     tags$head(
       tags$script(
-        HTML(
-          '$(document).on("shiny:connected", function() {
-          window.resizeTo(800, 600);
-        });'
-        )
+        "shinyjs.resizeWindow = function(width, height) {
+          window.resizeTo(width, height);
+      };"
       )
     ),
 
     useShinyjs(),
-    useCSS("basic_interface.css"),
-    useCSS("layer_bar.css"),
-    useCSS("param_bar.css"),
+    ui_css("basic_interface.css"),
+    ui_css("layer_bar.css"),
+    ui_css("param_bar.css"),
 
     fluidRow(
-      layerBar(),
+      ui_sidebar_layer(),
 
       # Central content with tabs
       div(id = "main",
@@ -33,7 +31,7 @@ app_ui <- function() {
           verbatimTextOutput("console_output")
       ),
 
-      paramBar()
+      ui_sidebar_parameters()
     )
   )
 }

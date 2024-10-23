@@ -1,12 +1,15 @@
 #' GGplot renderer
 #'
+#' Dynamic renderer of the plot
+#'
 #' @param input Standard Shiny parameters
+#'
 #' @return GGplot2 plot
 #' @keywords internal
 #' @import ggplot2
 #' @import rlang
 
-plotDisplay <- function(input) {
+plot_display <- function(input) {
   plot <- ggplot(get(work_df, envir = .GlobalEnv))
 
   plot <- plot +
@@ -24,9 +27,8 @@ plotDisplay <- function(input) {
 
   for(geom in geom_to_add){
     #Line
-    if(grepl("pnl_line_\\d+_geom", geom)){
+    if(grepl("^pnl_line_\\d+\\.?\\d*_geom$", geom)){
       line_type <- paste0(geom, "_tline")
-
       if(input[[line_type]] == "Vertical"){
         plot <- plot +
           geom_vline(xintercept = 1)

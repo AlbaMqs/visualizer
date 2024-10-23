@@ -1,4 +1,3 @@
-id_layer <- 0
 id_layer_list <- c()
 
 geom_list <- c("point",

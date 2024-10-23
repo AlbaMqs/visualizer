@@ -1,4 +1,4 @@
-#' Layer Bar Event Handlers
+#' ui_layer_events
 #'
 #' Encapsulates the logic to handle the layer bar interaction.
 #'
@@ -7,16 +7,7 @@
 #' @import shinyjs
 #'
 #' @keywords internal
-#' Layer Bar Event Handlers
-#'
-#' Encapsulates the logic to handle the layer bar interaction.
-#'
-#' @param input, output, session Standard Shiny parameters.
-#'
-#' @import shinyjs
-#'
-#' @keywords internal
-layerBarEvents <- function(input, output, session) {
+ui_layer_events <- function(input, output, session) {
 
   # Use shinyjs to handle DOM manipulations
   useShinyjs()
@@ -40,7 +31,7 @@ layerBarEvents <- function(input, output, session) {
   })
 
   # Add a new layer when "add-layer" is clicked
-  onclick("add-layer", { showModal(selectAddLayer()) })
+  onclick("add-layer", { showModal(layer_select_new()) })
 
   # Handle the buttons in the modal to add layers dynamically
   button_ids <- c("btn_line", "btn_point", "btn_bar", "btn_text")
@@ -48,7 +39,7 @@ layerBarEvents <- function(input, output, session) {
   # Attach an observer to each button in the modal
   lapply(button_ids, function(btn_id) {
     observeEvent(input[[btn_id]], {
-      addLayer(btn_id, session)  # Add the new layer and attach `onevent`
+      ui_add_layer(btn_id, input, output, session)  # Add the new layer and attach `onevent`
       removeModal()  # Close the modal after adding the layer
     })
   })

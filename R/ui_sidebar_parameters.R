@@ -1,14 +1,15 @@
+#' ui_sidebar_parameters
+#'
 #' UI for the left sidebar used to control parameters
 #'
 #' @return Shiny UI Object
 #' @keywords internal
 #' @import shiny
 
-paramBar <- function() {
+ui_sidebar_parameters <- function() {
   div(id = "param-sidebar",
       class = "sidebar",
 
-      theme_opt_panel(id = "pnl_theme_opt"),
-      line_panel(id = "pnl_line_0_geom")
+      panel_theme_opt(id = "pnl_theme_opt")
   )
 }

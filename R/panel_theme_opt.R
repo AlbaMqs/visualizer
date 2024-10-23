@@ -1,4 +1,12 @@
-theme_opt_panel <- function(id){
+#' panel_line
+#'
+#' Constructor of global theme option panel
+#'
+#' @param id String of layer's ID
+#'
+#' @return Div of a global theme option panel
+#'
+panel_theme_opt <- function(id){
   div(id = id,
       class = "panel pnl_theme visible",
 
