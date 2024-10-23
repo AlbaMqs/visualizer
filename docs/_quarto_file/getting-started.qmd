@@ -1,0 +1,10 @@
+---
+title: "Getting Started"
+---
+
+# Introduction à VisualizeR
+
+Voici comment commencer à utiliser VisualizeR :
+
+- Étape 1 : Installation
+- Étape 2 : Utilisation de base

@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "reference.html",
+    "href": "reference.html",
+    "title": "Function Reference",
+    "section": "",
+    "text": "Référence des fonctions\nVoici une liste des principales fonctions du package VisualizeR :\n\nfunction1() : Description de la fonction 1.\nfunction2() : Description de la fonction 2."
+  },
+  {
+    "objectID": "getting-started.html",
+    "href": "getting-started.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Introduction à VisualizeR\nVoici comment commencer à utiliser VisualizeR :\n\nÉtape 1 : Installation\nÉtape 2 : Utilisation de base"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "VisualizeR Documentation",
+    "section": "",
+    "text": "Bienvenue dans la documentation de VisualizeR\nCe site fournit une documentation détaillée pour utiliser le package VisualizeR. Vous trouverez ici des guides, des références de fonctions, et bien plus encore."
+  }
+]

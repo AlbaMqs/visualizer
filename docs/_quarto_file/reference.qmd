@@ -1,0 +1,10 @@
+---
+title: "Function Reference"
+---
+
+# Référence des fonctions
+
+Voici une liste des principales fonctions du package VisualizeR :
+
+- `function1()` : Description de la fonction 1.
+- `function2()` : Description de la fonction 2.

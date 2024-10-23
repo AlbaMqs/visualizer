@@ -1,0 +1,7 @@
+---
+title: "VisualizeR Documentation"
+---
+
+# Bienvenue dans la documentation de VisualizeR
+
+Ce site fournit une documentation détaillée pour utiliser le package VisualizeR. Vous trouverez ici des guides, des références de fonctions, et bien plus encore.
