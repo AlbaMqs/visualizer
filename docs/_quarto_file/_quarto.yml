@@ -11,26 +11,23 @@ website:
     show-item-context: true
     type: overlay
   page-footer:
-    left: |
-      Proudly supported by
-      [![](https://posit.co/wp-content/uploads/2024/06/Posit-Logos-2024_horiz-full-color.svg){fig-alt="Posit" width=65px}](https://posit.co)
+    left: &copy; 2024 [Alba Maiques](https://github.com/AlbaMqs). Licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
     center:
       - text: "About"
         href: about.qmd
-      - text: "FAQ"
-        href: docs/faq/index.qmd
       - text: "License"
         href: https://github.com/AlbaMqs/visualizer/blob/main/LICENSE.md
     right:
       - icon: github
-        href: https://github.com/quarto-dev/quarto-cli
+        href: https://github.com/AlbaMqs/visualizer
         aria-label: VisualizeR GitHub
   page-navigation: true
   sidebar:
     style: "floating"
     collapse-level: 2
     align: left
-    left:
+    contents:
       - href: index.qmd
         text: "Home"
       - href: getting-started.qmd
