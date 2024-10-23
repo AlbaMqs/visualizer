@@ -1,85 +1,113 @@
+/* Conteneur principal de la sidebar */
 #layers_bar {
-  padding: 0 0 0 15px;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 256px;
-  height: 100vh; /* Pour que la barre prenne la hauteur de l'écran */
+  height: 100vh;
+  background-color: #f0f0f5; /* Fond de la sidebar distinct du fond blanc */
+  border-right: 1px solid #d0d0d5;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 8px; /* Ajout d'un peu de padding autour pour l'aération */
 }
 
+/* Conteneur des calques */
 #layers_bar .rank-list-container {
-  flex-grow: 1; /* Remplit l'espace disponible mais ne force pas l'extension des éléments */
-  border: 0;
+  flex-grow: 1;
+  border: none;
   padding: 0;
   margin: 0;
-  overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
-  width: 100%; /* S'assure que le conteneur prend toute la largeur */
+  overflow-y: auto;
+  width: 100%;
 }
 
+/* Liste des calques */
 #layers_bar .rank-list {
   margin: 0;
 }
 
-#layers_bar .rank-list-item {
-  padding: 0;
-  border-radius: 0;
-  height: 64px;
-  border: 0;
-  width: 100%; /* Assure que chaque item prend toute la largeur */
-}
-
+/* Élément de la liste des calques */
 .layer-item {
+  height: 56px; /* Hauteur légèrement réduite pour affiner */
+  margin: 8px 0 0 0; /* Ajout de marges autour des éléments */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: none;
   display: flex;
-  align-items: center; /* Aligne verticalement le contenu */
-  justify-content: flex-start; /* Aligne le contenu à gauche */
-  background-color: #F3F5F7; /* Couleur de fond originale */
-  border-bottom: solid 1px #DAE0E7; /* Bordure inférieure */
-  height: 64px; /* Hauteur fixe */
-  padding: 0 8px; /* Un peu de padding pour l'espacement horizontal */
-  margin: 0; /* Neutralisation des marges */
-  background: none; /* Neutralise tout background par défaut */
-  border: 0; /* Neutralise toute bordure par défaut */
-  width: 100%; /* Assure que l'élément prend toute la largeur */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition douce pour l'effet hover */
-}
-
-.layer-item:not(.non-drag):hover {
-  background-color: #E2E6EA; /* Légèrement plus sombre au survol */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre vers l'extérieur au survol */
+  align-items: center;
+  padding: 8px 12px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  width: calc(100% - 8px); /* Réduction de la largeur pour respecter les marges */
 }
 
 .layer-item img {
-  width: 48px;
-  height: 48px;
-  margin-right: 12px; /* Espace entre l'image et le texte */
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
 }
 
 .layer-item span {
-  display: flex;
-  align-items: center; /* Centre le texte verticalement */
-  font-weight: bold; /* Texte en gras */
+  font-size: 16px;
+  color: #333;
 }
 
+/* Effet au survol des éléments */
+.layer-item:hover {
+  background-color: #e3f2fd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Élément non-déplaçable (ajout de calque, options globales) */
+.layer-item.non-drag {
+  opacity: 0.8;
+  cursor: default;
+  width: 100%; /* Réduction de la largeur pour respecter les marges */
+}
+
+/* Élément de la liste des calques sélectionné */
+.layer-item.selected {
+  width: 100%; /* Largeur complète lorsqu'un élément est sélectionné */
+  background-color: #bbdefb; /* Accentuation bleu clair pour indiquer la sélection */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur à la sélection */
+  border-left: 4px solid #1976d2; /* Petite bordure accentuée à gauche pour indiquer la sélection */
+}
+
+/* Effet au survol des éléments sélectionnés (optionnel) */
+.layer-item.selected:hover {
+  background-color: #90caf9; /* Accentuation légèrement plus forte au survol */
+}
+
+
 #add-layer {
-  background-color: #5A9FD6; /* Bleu plus doux */
-  color: white; /* Texte en blanc pour contraster */
-  border-top: solid 1px #DAE0E7; /* Séparation visuelle avec une bordure en haut */
-  transition: background-color 0.3s ease; /* Transition douce pour les changements de couleur */
+  height: 56px; /* Hauteur ajustée pour être cohérente avec les autres éléments */
+  background-color: #1976d2;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 #add-layer:hover {
-  background-color: #4A8CC0; /* Bleu légèrement plus foncé au survol */
+  background-color: #1565c0;
 }
 
+/* Gestion de la visibilité pour les boîtes d'information */
 #info-box-layer.visible {
-  display: box;
+  display: block;
+  padding: 16px;
+  font-size: 14px;
+  color: #757575;
 }
 
 #info-box-layer.invisible {
   display: none;
 }
 
-
+/* Gestion de la visibilité pour le conteneur sortable */
 #rank-list-sortable_layer.invisible {
   visibility: hidden;
 }

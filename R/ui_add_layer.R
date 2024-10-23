@@ -38,6 +38,11 @@ ui_add_layer <- function(btn_id, input, output, session){
 
   # Toggle Panel Event
   onevent("click", id_layer, {
+    lapply(id_layer_list, function(layer) {
+      removeClass(layer, class = "selected")
+    })
+    addClass(id_layer, "selected")
+
     to_open <- str_replace(id_layer, "^lb_", "pnl_")
     to_close <- lapply(id_layer_list, str_replace, "^lb_", "pnl_")
 

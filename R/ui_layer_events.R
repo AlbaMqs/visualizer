@@ -15,6 +15,10 @@ ui_layer_events <- function(input, output, session) {
   # Attach onclick to existing layers at startup
   lapply(id_layer_list, function(layer_id) {
     onevent("click", layer_id, {
+      lapply(id_layer_list, function(layer) {
+        removeClass(layer, class = "selected")
+      })
+      addClass(id_layer, "selected")
 
       to_open <- str_replace(layer_id, "^lb_", "pnl_")
       to_close <- lapply(id_layer_list, str_replace, "^lb_", "pnl_")
