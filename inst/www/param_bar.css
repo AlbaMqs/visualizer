@@ -1,22 +1,188 @@
-/* Specific positioning for right sidebar */
 #param-sidebar {
+  position: fixed;
+  top: 0;
   right: 0;
   width: 384px;
-  padding: 20px;
+  height: 100vh;
+  padding: 0;
+  background-color: #F3F5F7; /* Couleur de fond claire et propre */
+  border-left: 1px solid #DAE0E7; /* Bordure à gauche */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Effet d'ombre légère */
+  overflow-y: auto; /* Défilement si le contenu dépasse */
 }
 
 .panel {
   display: none;
-  background: 0;
+  padding: 16px;
+  background-color: #F3F5F7;
   border: 0;
-  box-shadow : inherit;
 }
 
 .panel.visible {
   display: block;
 }
 
-.panel h3{
+.panel h3, .panel h4 {
   margin-top: 0;
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  color: #333; /* Texte sombre pour plus de lisibilité */
+}
+
+/* Champs de formulaire généraux */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #DAE0E7;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #5A9FD6; /* Change la bordure lors du focus */
+  box-shadow: 0 0 8px rgba(90, 159, 214, 0.4); /* Lueur subtile autour */
+}
+
+select {
+  appearance: none; /* Supprime l'apparence native du select */
+  background: white url('data:image/svg+xml;base64,...') no-repeat right 10px center; /* Ajout d'une flèche */
+  background-size: 12px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Style des boutons */
+.btn {
+  background-color: #5A9FD6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4A8CC0;
+}
+
+/* Style pour les cases à cocher et boutons radio */
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #DAE0E7;
+  border-radius: 2px;
+  background-color: white;
+  display: inline-block;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #5A9FD6;
+  border-color: #5A9FD6;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+  background-color: #5A9FD6;
+  border-color: #5A9FD6;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+/* Style des sliders */
+.irs {
+  border: 1px solid #DAE0E7;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.irs-bar {
+  background-color: #5A9FD6;
+}
+
+.irs-bar-edge {
+  background-color: #5A9FD6;
+}
+
+.irs-handle {
+  background-color: #5A9FD6;
+  border: 1px solid #5A9FD6;
+}
+
+.irs-handle:hover {
+  background-color: #4A8CC0;
+  border-color: #4A8CC0;
+}
+
+.irs-from, .irs-to, .irs-single {
+  background-color: #5A9FD6;
+  color: white;
+  border-radius: 4px;
+}
+
+.irs-grid-text {
+  color: #333;
+}
+
+/* Style des file inputs */
+input[type="file"] {
+  display: none;
+}
+
+.input-group-btn .btn-file {
+  background-color: #5A9FD6;
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.input-group-btn .btn-file:hover {
+  background-color: #4A8CC0;
+}
+
+.input-group-text {
+  border: 1px solid #DAE0E7;
+  background-color: white;
+}
+
+/* Progrès des fichiers */
+.progress-bar {
+  background-color: #5A9FD6;
 }

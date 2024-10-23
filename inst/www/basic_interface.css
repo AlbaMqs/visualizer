@@ -7,15 +7,14 @@ body {
 
 /* Style for both sidebars */
 .sidebar {
-  background-color: #f8f9fa;
   height: 100vh;
   position: fixed;
   top: 0;
   display: flex;
   flex-direction: column;
   justify-content: start;
-    border-left: solid 1px #DAE0E7; /* Bordure gauche */
-  border-right: solid 1px #DAE0E7; /* Bordure droite */
+  background-color: #f0f0f5; /* Fond de la sidebar distinct du fond blanc */
+  padding: 8px; /* Ajout d'un peu de padding autour pour l'aération */
 }
 
 /* Style for the central content */
