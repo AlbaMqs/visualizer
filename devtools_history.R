@@ -6,4 +6,5 @@ usethis::use_package("sortable")
 usethis::use_package("shinyjs")
 usethis::use_package("stringr")
 usethis::use_package("rlang")
+usethis::use_package("colourpicker")
 

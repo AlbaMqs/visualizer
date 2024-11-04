@@ -8,6 +8,7 @@
 #' @keywords internal
 #' @import ggplot2
 #' @import rlang
+#' @improt stringr
 
 plot_display <- function(input) {
   plot <- ggplot(get(work_df, envir = .GlobalEnv))
@@ -21,23 +22,20 @@ plot_display <- function(input) {
     do.call(paste0("theme_", input$theme_name), list())
 
   # Geom
-  geom_index <- grep("geom", id_layer_list)
-  geom_to_add <- id_layer_list[geom_index] |>
+  geom_list <- id_layer_list |>
+    str_subset("geom") |>
     str_replace("^lb_", "pnl_")
 
-  for(geom in geom_to_add){
-    #Line
-    if(grepl("^pnl_line_\\d+\\.?\\d*_geom$", geom)){
-      line_type <- paste0(geom, "_tline")
-      if(input[[line_type]] == "Vertical"){
-        plot <- plot +
-          geom_vline(xintercept = 1)
-      }
-      else if(input[[line_type]] == "Horizontal"){
-        plot <- plot +
-          geom_hline(yintercept = 1)
-      }
-    }
+  for(geom in geom_list){
+
+    geom_type <- str_extract(geom, "(?<=pnl_)[^_]+")
+    input_names <- names(input)
+    geom_inputs <- input_names[grep(str_escape(geom), input_names)]
+    geom_param <- lapply(geom_inputs, function(input_name) input[[input_name]])
+    names(geom_param) <- geom_inputs |>
+      str_remove(str_escape(paste0(geom, "_")))
+
+    plot <- do.call(paste0("plot_", geom_type), list(geom_param, geom, plot))
   }
 
   return(plot)

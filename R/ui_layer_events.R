@@ -18,7 +18,7 @@ ui_layer_events <- function(input, output, session) {
       lapply(id_layer_list, function(layer) {
         removeClass(layer, class = "selected")
       })
-      addClass(id_layer, "selected")
+      addClass(layer_id, "selected")
 
       to_open <- str_replace(layer_id, "^lb_", "pnl_")
       to_close <- lapply(id_layer_list, str_replace, "^lb_", "pnl_")

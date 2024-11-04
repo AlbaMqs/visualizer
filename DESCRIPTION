@@ -22,6 +22,7 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Imports: 
+    colourpicker,
     dplyr,
     ggplot2,
     rlang,

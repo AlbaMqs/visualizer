@@ -24,6 +24,7 @@
 
 .panel h3, .panel h4 {
   margin-top: 0;
+  margin-bottom: 16px;
   color: #333; /* Texte sombre pour plus de lisibilité */
 }
 
@@ -127,11 +128,6 @@ input[type="radio"]:checked::after {
 }
 
 /* Style des sliders */
-.irs {
-  border: 1px solid #DAE0E7;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
 .irs-bar {
   background-color: #5A9FD6;
 }
@@ -169,7 +165,7 @@ input[type="file"] {
   background-color: #5A9FD6;
   color: white;
   border-radius: 4px;
-  padding: 8px 16px;
+  padding: 7px 16px;
   cursor: pointer;
 }
 
@@ -177,12 +173,81 @@ input[type="file"] {
   background-color: #4A8CC0;
 }
 
-.input-group-text {
-  border: 1px solid #DAE0E7;
-  background-color: white;
-}
-
 /* Progrès des fichiers */
 .progress-bar {
   background-color: #5A9FD6;
+}
+
+/* Conteneur des onglets (prendre toute la largeur du parent) */
+.panel .nav-tabs {
+  display: flex;
+  justify-content: space-between; /* Les onglets sont répartis de manière égale */
+  width: 100%; /* Prend toute la largeur du parent */
+  border: none;
+  padding: 0;
+  margin: 0 0 16px 0; /* Espacement autour des onglets */
+}
+
+/* Styles communs aux liens d'onglets */
+.panel .nav-tabs li a {
+  flex-grow: 1; /* Chaque onglet prend la même place disponible */
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  margin: 0;
+}
+
+/* Onglet actif (sélectionné) */
+.panel .nav-tabs li.active a {
+  background-color: #1976d2;
+  color: #ffffff;
+  border-color: #1976d2;
+}
+
+/* Effet au survol des onglets */
+.panel .nav-tabs li a:hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+/* Suppression des marges et des styles de liste */
+.panel .nav-tabs li {
+  list-style: none;
+  margin: 0;
+  flex-grow: 1; /* Chaque onglet prend une largeur égale */
+}
+
+/* Optionnel : si tu veux arrondir les coins des extrémités */
+.panel .nav-tabs li:first-child a {
+  border-radius: 8px 0 0 8px;
+}
+
+.panel .nav-tabs li:last-child a {
+  border-radius: 0 8px 8px 0;
+}
+
+.hdiv {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espace entre les éléments */
+}
+
+.hdiv input[type="text"],
+.hdiv input[type="number"],
+.hdiv select,
+.hdiv textarea {
+    flex-grow: 1; /* Élargir pour remplir l’espace disponible */
+    min-width: 0; /* Évite que les éléments ne débordent */
+}
+
+.hdiv .form-group {
+    flex: 1 1 0; /* Les éléments prennent toute la largeur */
+    width: 100%; /* S’adapte à l’espace */
 }

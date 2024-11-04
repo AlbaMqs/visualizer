@@ -14,7 +14,8 @@ ui_add_layer <- function(btn_id, input, output, session){
 
   # Generate id for all components
   type <- str_remove(btn_id, "^btn_")
-  id_base <- paste0(type, "_", as.numeric(Sys.time()), "_geom")
+  id_base <- paste0(type, "_", as.numeric(Sys.time()), "_geom") |>
+    str_remove_all("\\.")
 
   id_layer <- paste0("lb_", id_base)
   id_panel <- paste0("pnl_", id_base)

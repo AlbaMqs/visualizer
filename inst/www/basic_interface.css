@@ -19,18 +19,18 @@ body {
 
 /* Style for the central content */
 #main {
-  margin-left: 256px; /* Offset to account for the left sidebar */
-  margin-right: 400px; /* Offset to account for the right sidebar */
+  margin-left: 270px; /* Offset to account for the left sidebar */
+  margin-right: 398px; /* Offset to account for the right sidebar */
   padding: 20px;
   background-color: #ffffff;
 }
 
 /* Tabset panel styling */
-.tab-content {
-  padding: 10px;
+#main .tab-content {
+  margin-top: 8px;
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: #f9f9f9;
 }
 
 #mainPlot {
@@ -45,5 +45,56 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Conteneur des onglets */
+#main .nav-tabs {
+  border: none;
+  padding: 0;
+}
+
+/* Styles communs aux liens d'onglets */
+#main .nav-tabs li a {
+  display: block;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  margin: 0;
+}
+
+/* Onglet actif (sélectionné) */
+#main .nav-tabs li.active a {
+  background-color: #1976d2;
+  color: #ffffff;
+  border-color: #1976d2;
+}
+
+/* Effet au survol des onglets */
+#main .nav-tabs li a:hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-bottom: inherit;
+}
+
+/* Suppression des marges et des styles de liste */
+#main .nav-tabs li {
+  list-style: none;
+  margin: 0;
+}
+
+/* Optionnel : pour une apparence de bascule plus marquée */
+#main .nav-tabs li:first-child a {
+  border-radius: 8px 0 0 8px;
+}
+
+#main .nav-tabs li:last-child a {
+  border-radius: 0 8px 8px 0;
 }
 
